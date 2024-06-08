@@ -2,8 +2,30 @@
 
 ## for windows please use [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)
 
+## general installation
+```
+curl https://pyenv.run | bash
+# or
+curl https://pyenv.run | zsh
+```
+
+## For zsh
+```
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+```
+
 
 ## [pyenv on mac](https://github.com/pyenv/pyenv?tab=readme-ov-file#getting-pyenv)
+
+## On ubuntu
+```
+# https://github.com/pyenv/pyenv/issues/2888
+sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
 
 ```
 pyenv install 3.12.3
@@ -28,7 +50,7 @@ pip install virtualenv
 ```
 virtualenv venv
 source venv/bin/activate
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Fast api development
