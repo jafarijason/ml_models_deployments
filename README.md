@@ -62,3 +62,8 @@ fastapi dev main.py
 ```
 pip freeze > requirements.txt
 ```
+
+## Run Jupyter lab
+```
+jupyter lab
+```
