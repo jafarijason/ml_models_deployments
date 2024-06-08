@@ -1,0 +1,16 @@
+source venv/bin/activate
+pip install pandas  numpy matplotlib
+
+pip install ipykernel
+pip freeze > requirements.txt
+ipython kernel install --user --name=venv
+jupyter lab
+jupyter notebook \\n        --notebook-dir="./notebooks"
+pip install matplotlib.pyplot
+pip install matplotlib
+jupyter notebook \\n        --notebook-dir="./notebooks"
+pip install openpyxl
+pip freeze > requirements.txt
+jupyter notebook \\n        --notebook-dir="./notebooks"
+pip install statsmodels
+pip freeze > requirements.txt

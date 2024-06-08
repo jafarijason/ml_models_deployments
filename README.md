@@ -63,7 +63,8 @@ fastapi dev main.py
 pip freeze > requirements.txt
 ```
 
-## Run Jupyter lab
+## Run Jupyter notebooks
 ```
-jupyter lab
+jupyter notebook \
+        --notebook-dir="./notebooks"
 ```
