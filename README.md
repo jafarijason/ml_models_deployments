@@ -88,5 +88,5 @@ pip install mangum
 ```
 heroku login
 
-git push heroku main
+git push heroku master
 ```
