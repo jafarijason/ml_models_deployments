@@ -43,16 +43,15 @@ def modelsInfo(body: ModelsBody):
         inputItem = []
         for indexConfig, inputItemConfig in enumerate(modelConfigGet['inputs'] or []):
             configValue = inputItemBody[inputItemConfig['name']]
-            
+
             inputItem.append(configValue)
         inputForPredict.append(inputItem)
-    
+
     model = importModel({
         "modelName": modelConfigGet['name'],
         "baseRelativePath": ".",
     })
-    
+
     result = model.predict(inputForPredict)
-    
+
     return list(result)
-    

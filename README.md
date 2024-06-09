@@ -58,6 +58,11 @@ pip install -r requirements.txt
 fastapi dev main.py
 ```
 
+##
+```
+uvicorn main:app --host=0.0.0.0 --port=${PORT:-9900}
+```
+
 ## if you install new dependency run this command and commit your code
 ```
 pip freeze > requirements.txt
@@ -67,5 +72,14 @@ pip freeze > requirements.txt
 ```
 export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 jupyter notebook \
-        --notebook-dir="./notebooks"
+        --notebook-dir="./notebooks" \
+        --ip=0.0.0.0 --port=3225
+```
+
+# deploy serverless
+```
+# https://www.deadbear.io/simple-serverless-fastapi-with-aws-lambda/amp/
+
+pip install mangum
+
 ```

@@ -12,9 +12,9 @@ def exportModel(config):
     inputs = config['inputs']
     output = config['output']
     description = config['description']
+    modelsConfig[modelName]['description'] = description
     modelsConfig[modelName]['inputs'] = inputs
     modelsConfig[modelName]['output'] = output
-    modelsConfig[modelName]['description'] = description
     filename = f'{baseRelativePath}/models/{modelName}'
     pickle.dump(model, open(filename, 'wb'))
     with open(f'{baseRelativePath}/models/configs.json', "w") as outputFile:
