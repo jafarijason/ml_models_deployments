@@ -11,9 +11,12 @@ def exportModel(config):
     model = config['model']
     inputs = config['inputs']
     output = config['output']
+    transformers = config.get('transformers', [])
     description = config['description']
     modelsConfig[modelName]['description'] = description
     modelsConfig[modelName]['inputs'] = inputs
+    if len(transformers) > 0:
+        modelsConfig[modelName]['transformers'] = transformers
     modelsConfig[modelName]['output'] = output
     filename = f'{baseRelativePath}/models/{modelName}'
     pickle.dump(model, open(filename, 'wb'))

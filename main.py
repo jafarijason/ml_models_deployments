@@ -5,6 +5,8 @@ from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 from functions.modelConfig import modelConfig, modelsList
 from functions.importModel import importModel
+from functions.transformers import transformersDict
+import pandas as pd
 
 app = FastAPI()
 
@@ -37,15 +39,15 @@ def modelInfo(modelName: str = Path(..., example="0001_test")):
 @app.post("/model/predict")
 def modelsInfo(body: ModelsBody):
     modelConfigGet = modelConfig(body.name)
-    inputForPredict = []
-     # Iterate over each input item
-    for indexBody, inputItemBody in enumerate(body.inputs or []):
-        inputItem = []
-        for indexConfig, inputItemConfig in enumerate(modelConfigGet['inputs'] or []):
-            configValue = inputItemBody[inputItemConfig['name']]
 
-            inputItem.append(configValue)
-        inputForPredict.append(inputItem)
+    inputForPredict = []
+    for indexBody, inputItemBody in enumerate(body.inputs or []):
+        inputItemBodyPd = pd.Series(inputItemBody)
+        transformers = modelConfigGet.get('transformers', [])
+        for indexTransform, inputItemTransform in enumerate(transformers):
+            transformer = transformers[indexTransform]
+            inputItemBodyPd[transformer['name']] = transformersDict.get(transformer['transformer'])(inputItemBodyPd)
+        inputForPredict.append(inputItemBodyPd)
 
     model = importModel({
         "modelName": modelConfigGet['name'],

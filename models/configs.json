@@ -144,5 +144,167 @@
             "name": "Sales",
             "type": "float"
         }
+    },
+    "salaryBasedOnGpaMisStatisticsFit": {
+        "name": "salaryBasedOnGpaMisStatisticsFit",
+        "description": "Predict Salary based on GPA MIS Statistics for sallaryMisDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "GPA",
+                "type": "float"
+            },
+            {
+                "name": "MIS",
+                "type": "binary"
+            },
+            {
+                "name": "Statistics",
+                "type": "binary"
+            }
+        ],
+        "output": {
+            "name": "Salary",
+            "type": "int"
+        }
+    },
+    "salaryBasedOnGpaMisStatistics_Transfoms_misXStatisticsFit": {
+        "name": "salaryBasedOnGpaMisStatistics_Transfoms_misXStatisticsFit",
+        "description": "Predict Salary based on GPA MIS Statistics and interaction MIS * Statistics for sallaryMisDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "GPA",
+                "type": "float"
+            },
+            {
+                "name": "MIS",
+                "type": "binary"
+            },
+            {
+                "name": "Statistics",
+                "type": "binary"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "misXStatistics",
+                "transformer": "MIS_X_Statistics"
+            }
+        ],
+        "output": {
+            "name": "Salary",
+            "type": "int"
+        }
+    },
+    "salaryBasedOnGpaMisStatistics_Transfoms_misXGpaFit": {
+        "name": "salaryBasedOnGpaMisStatistics_Transfoms_misXGpaFit",
+        "description": "Predict Salary based on GPA MIS Statistics and interaction misXGpa for sallaryMisDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "GPA",
+                "type": "float"
+            },
+            {
+                "name": "MIS",
+                "type": "binary"
+            },
+            {
+                "name": "Statistics",
+                "type": "binary"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "misXGpa",
+                "transformer": "MIS_X_GPA"
+            }
+        ],
+        "output": {
+            "name": "Salary",
+            "type": "int"
+        }
+    },
+    "salaryBasedOnGpaMisStatistics_Transfoms_statisticsXGpaFit": {
+        "name": "salaryBasedOnGpaMisStatistics_Transfoms_statisticsXGpaFit",
+        "description": "Predict Salary based on GPA MIS Statistics and interaction misXGpa for statisticsXGpa",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "GPA",
+                "type": "float"
+            },
+            {
+                "name": "MIS",
+                "type": "binary"
+            },
+            {
+                "name": "Statistics",
+                "type": "binary"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "statisticsXGpa",
+                "transformer": "GPA_X_Statistics"
+            }
+        ],
+        "output": {
+            "name": "Salary",
+            "type": "int"
+        }
+    },
+    "salaryBasedOnGpaMisStatistics_Transfoms_misXStatistics_misXGpa_statisticsXGpaFit": {
+        "name": "salaryBasedOnGpaMisStatistics_Transfoms_misXStatistics_misXGpa_statisticsXGpaFit",
+        "description": "Predict Salary based on GPA MIS Statistics and interaction misXStatistics, misXGpa, statisticsXGpa",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "GPA",
+                "type": "float"
+            },
+            {
+                "name": "MIS",
+                "type": "binary"
+            },
+            {
+                "name": "Statistics",
+                "type": "binary"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "misXStatistics",
+                "transformer": "MIS_X_Statistics"
+            },
+            {
+                "name": "misXGpa",
+                "transformer": "MIS_X_GPA"
+            },
+            {
+                "name": "statisticsXGpa",
+                "transformer": "GPA_X_Statistics"
+            }
+        ],
+        "output": {
+            "name": "Salary",
+            "type": "int"
+        }
     }
 }
