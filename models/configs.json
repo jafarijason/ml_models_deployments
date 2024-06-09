@@ -306,5 +306,115 @@
             "name": "Salary",
             "type": "int"
         }
+    },
+    "wageEduModelFit": {
+        "name": "wageEduModelFit",
+        "description": "Predict Wage based on Educ for wagesDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Educ",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Wage",
+            "type": "float"
+        }
+    },
+    "wageAgeModelFit": {
+        "name": "wageAgeModelFit",
+        "description": "Predict Wage based on Age for wagesDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Age",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Wage",
+            "type": "float"
+        }
+    },
+    "wageAgePower2ModelFit": {
+        "name": "wageAgePower2ModelFit",
+        "description": "Predict Wage based on Age quadradic for wagesDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Age",
+                "type": "float"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "agePower2",
+                "transformer": "AGE_POWER_2"
+            }
+        ],
+        "output": {
+            "name": "Wage",
+            "type": "float"
+        }
+    },
+    "wageAgeEduModel1": {
+        "name": "wageAgeEduModel1",
+        "description": "Predict Wage based on Age and Educ for wagesDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Age",
+                "type": "float"
+            },
+            {
+                "name": "Educ",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Wage",
+            "type": "float"
+        }
+    },
+    "wageAgePower2EducModelFit": {
+        "name": "wageAgePower2EducModelFit",
+        "description": "Predict Wage based on Age quadradic and Educ for wagesDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Age",
+                "type": "float"
+            },
+            {
+                "name": "Educ",
+                "type": "float"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "agePower2",
+                "transformer": "AGE_POWER_2"
+            }
+        ],
+        "output": {
+            "name": "Wage",
+            "type": "float"
+        }
     }
 }
