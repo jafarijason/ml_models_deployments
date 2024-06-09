@@ -590,5 +590,51 @@
             "type": "float"
         },
         "modelType": "sm.OLS"
+    },
+    "logisticRegYFromX1AndX2Model": {
+        "name": "logisticRegYFromX1AndX2Model",
+        "description": "Predict Logistic Regression Y based on x1,x2 for mortgageDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "x1",
+                "type": "float"
+            },
+            {
+                "name": "x2",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "y",
+            "type": "float"
+        },
+        "modelType": "sm.Logit"
+    },
+    "logisticRegYFromX1AndX2ModelFit": {
+        "name": "logisticRegYFromX1AndX2ModelFit",
+        "description": "Predict Logistic Regression Y based on x1,x2 for mortgageDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "x1",
+                "type": "float"
+            },
+            {
+                "name": "x2",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "y",
+            "type": "float"
+        },
+        "modelType": "sm.Logit"
     }
 }
