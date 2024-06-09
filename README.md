@@ -83,3 +83,10 @@ jupyter notebook \
 pip install mangum
 
 ```
+
+## heroku
+```
+heroku login
+
+git push heroku main
+```
