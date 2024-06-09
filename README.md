@@ -65,6 +65,7 @@ pip freeze > requirements.txt
 
 ## Run Jupyter notebooks
 ```
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 jupyter notebook \
         --notebook-dir="./notebooks"
 ```

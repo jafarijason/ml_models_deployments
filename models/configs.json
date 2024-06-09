@@ -1,0 +1,104 @@
+{
+    "0001_test": {
+        "name": "0001_test",
+        "description": "predict Wage based on Education with linear regression",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Education",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Wage",
+            "type": "float"
+        }
+    },
+    "educationWageLiniarRgressionModelFit": {
+        "name": "educationWageLiniarRgressionModelFit",
+        "description": "predict Wage based on Education with linear regression",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Education",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Wage",
+            "type": "float"
+        }
+    },
+    "earningOthersOlsModelFit1": {
+        "name": "earningOthersOlsModelFit1",
+        "description": "predict Earnings based on Cost",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Cost",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Earnings",
+            "type": "float"
+        }
+    },
+    "earningOthersOlsModelFit2": {
+        "name": "earningOthersOlsModelFit2",
+        "description": "predict Earnings based on Cost and Grad",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Cost",
+                "type": "float"
+            },
+            {
+                "name": "Grad",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Earnings",
+            "type": "float"
+        }
+    },
+    "earningOthersOlsModelFit3": {
+        "name": "earningOthersOlsModelFit3",
+        "description": "predict Earnings based on Cost, Grad and Debt",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Cost",
+                "type": "float"
+            },
+            {
+                "name": "Grad",
+                "type": "int"
+            },
+            {
+                "name": "Debt",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Earnings",
+            "type": "float"
+        }
+    }
+}
