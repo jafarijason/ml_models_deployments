@@ -1,6 +1,7 @@
 from typing import Union
 
 from fastapi import FastAPI, Request, Path
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 from functions.modelConfig import modelConfig, modelsList
@@ -34,7 +35,28 @@ def models():
 
 @app.get("/model/info/{modelName}")
 def modelInfo(modelName: str = Path(..., example="0001_test")):
-    return modelConfig(modelName)
+    modelConfigGet = modelConfig(modelName)
+    model = importModel({
+        "modelName": modelConfigGet['name'],
+        "baseRelativePath": ".",
+    })
+
+    summary = model.summary().as_text()
+    response = modelConfigGet
+    response['summary'] = summary
+    return response
+
+@app.get("/model/infoSummary/{modelName}", response_class=HTMLResponse)
+def modelInfo(modelName: str = Path(..., example="0001_test")):
+    modelConfigGet = modelConfig(modelName)
+    model = importModel({
+        "modelName": modelConfigGet['name'],
+        "baseRelativePath": ".",
+    })
+
+    summary = model.summary().as_html()
+    return summary
+
 
 @app.post("/model/predict")
 def modelsInfo(body: ModelsBody):
