@@ -432,5 +432,163 @@
             "type": "float"
         },
         "modelType": "sm.OLS"
+    },
+    "rentSqftModel1": {
+        "name": "rentSqftModel1",
+        "description": "Predict Rent based on Sqft for annArborDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Sqft",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Rent",
+            "type": "float"
+        },
+        "modelType": "sm.OLS"
+    },
+    "rentBedsBathsSqftModel": {
+        "name": "rentBedsBathsSqftModel",
+        "description": "Predict Rent based on Beds,Baths,Sqft for annArborDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Beds",
+                "type": "int"
+            },
+            {
+                "name": "Baths",
+                "type": "int"
+            },
+            {
+                "name": "Sqft",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Rent",
+            "type": "float"
+        },
+        "modelType": "sm.OLS"
+    },
+    "rentBedsBathsSqftModelFit": {
+        "name": "rentBedsBathsSqftModelFit",
+        "description": "Predict Rent based on Beds,Baths,Sqft for annArborDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Beds",
+                "type": "int"
+            },
+            {
+                "name": "Baths",
+                "type": "int"
+            },
+            {
+                "name": "Sqft",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Rent",
+            "type": "float"
+        },
+        "modelType": "sm.OLS"
+    },
+    "rentBedsBathsLogSqftModelFit": {
+        "name": "rentBedsBathsLogSqftModelFit",
+        "description": "Predict Rent based on Beds,Baths,log(Sqft) for annArborDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Beds",
+                "type": "int"
+            },
+            {
+                "name": "Baths",
+                "type": "int"
+            },
+            {
+                "name": "Sqft",
+                "type": "float"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "log(Sqft)",
+                "transformer": "Sqft_log"
+            }
+        ],
+        "output": {
+            "name": "Rent",
+            "type": "float"
+        },
+        "modelType": "sm.OLS"
+    },
+    "rentSqftModel1Fit": {
+        "name": "rentSqftModel1Fit",
+        "description": "Predict Rent based on Sqft for annArborDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Sqft",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Rent",
+            "type": "float"
+        },
+        "modelType": "sm.OLS"
+    },
+    "logRentBedsBathsLogSqftModelFit": {
+        "name": "logRentBedsBathsLogSqftModelFit",
+        "description": "Predict log(Rent) based on Beds,Baths,log(Sqft) for annArborDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Beds",
+                "type": "int"
+            },
+            {
+                "name": "Baths",
+                "type": "int"
+            },
+            {
+                "name": "Sqft",
+                "type": "float"
+            }
+        ],
+        "transformers": [
+            {
+                "name": "log(Sqft)",
+                "transformer": "Sqft_log"
+            }
+        ],
+        "output": {
+            "name": "log(Rent)",
+            "type": "float"
+        },
+        "modelType": "sm.OLS"
     }
 }
