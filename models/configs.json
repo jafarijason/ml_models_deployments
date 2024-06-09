@@ -636,5 +636,41 @@
             "type": "float"
         },
         "modelType": "sm.Logit"
+    },
+    "spamBasedOnRecipientsHyperlinksCharactersLogitModelFit": {
+        "name": "spamBasedOnRecipientsHyperlinksCharactersLogitModelFit",
+        "description": "spamDf Logit with hold out",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Recipients",
+                "type": "int"
+            },
+            {
+                "name": "Hyperlinks",
+                "type": "int"
+            },
+            {
+                "name": "Characters",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Spam_probibility",
+            "type": "float"
+        },
+        "modelType": "sm.Logit",
+        "customMetrics": {
+            "accuracy": 0.78,
+            "recall": 0.7532467532467533,
+            "precision": 0.8055555555555556,
+            "sensitivity": 0.7532467532467533,
+            "specificity": 0.8082191780821918,
+            "f1Score": 0.778523489932886,
+            "roc_auc": 0.8305461661626046
+        }
     }
 }
