@@ -100,5 +100,49 @@
             "name": "Earnings",
             "type": "float"
         }
+    },
+    "modelPredictSaleByTemperatureAdvertisingDiscountFit": {
+        "name": "modelPredictSaleByTemperatureAdvertisingDiscountFit",
+        "description": "Predict Sales based on Temperature Advertising Discount for mowersDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Temperature",
+                "type": "int"
+            },
+            {
+                "name": "Advertising",
+                "type": "int"
+            },
+            {
+                "name": "Discount",
+                "type": "float"
+            }
+        ],
+        "output": {
+            "name": "Sales",
+            "type": "float"
+        }
+    },
+    "modelPredictSaleByAdvertisingFit": {
+        "name": "modelPredictSaleByAdvertisingFit",
+        "description": "Predict Sales based on Advertising for mowersDf",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Advertising",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Sales",
+            "type": "float"
+        }
     }
 }
