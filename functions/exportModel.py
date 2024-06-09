@@ -18,6 +18,8 @@ def exportModel(config):
     if len(transformers) > 0:
         modelsConfig[modelName]['transformers'] = transformers
     modelsConfig[modelName]['output'] = output
+    modelType = config.get('modelType', '')
+    modelsConfig[modelName]['modelType'] = modelType
     filename = f'{baseRelativePath}/models/{modelName}'
     pickle.dump(model, open(filename, 'wb'))
     with open(f'{baseRelativePath}/models/configs.json', "w") as outputFile:
