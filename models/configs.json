@@ -707,5 +707,42 @@
                 "accuracyAvg": 77.4
             }
         }
+    },
+    "gymEnrollAgeIncomeHoursDfKnnFit": {
+        "name": "gymEnrollAgeIncomeHoursDfKnnFit",
+        "description": "gymEnrollAgeIncomeHoursDf",
+        "inputs": [
+            {
+                "name": "Age",
+                "type": "int"
+            },
+            {
+                "name": "Income",
+                "type": "int"
+            },
+            {
+                "name": "Hours",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Enroll_probibility",
+            "type": "float"
+        },
+        "modelType": "knn",
+        "customMetrics": {
+            "accuracy": 0.9025,
+            "recall": 0.8944099378881988,
+            "precision": 0.8674698795180723,
+            "sensitivity": 0.8944099378881988,
+            "specificity": 0.9079497907949791,
+            "f1Score": 0.8807339449541285,
+            "roc_auc": 0.9423191870890616,
+            "cvK": 5,
+            "bestParameters": {
+                "n_neighbors": 5
+            },
+            "bestCrossValidationScore": 0.915
+        }
     }
 }
