@@ -20,6 +20,11 @@ def exportModel(config):
     modelsConfig[modelName]['output'] = output
     modelType = config.get('modelType', '')
     modelsConfig[modelName]['modelType'] = modelType
+    if hasattr(model, 'customMetrics'):
+        customMetrics = model.customMetrics
+        modelsConfig[modelName]['customMetrics'] = customMetrics
+    else:
+        pass
     filename = f'{baseRelativePath}/models/{modelName}'
     pickle.dump(model, open(filename, 'wb'))
     with open(f'{baseRelativePath}/models/configs.json', "w") as outputFile:

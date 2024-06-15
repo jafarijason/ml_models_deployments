@@ -636,5 +636,113 @@
             "type": "float"
         },
         "modelType": "sm.Logit"
+    },
+    "spamBasedOnRecipientsHyperlinksCharactersLogitModelFit": {
+        "name": "spamBasedOnRecipientsHyperlinksCharactersLogitModelFit",
+        "description": "spamDf Logit with hold out",
+        "inputs": [
+            {
+                "name": "const",
+                "type": "int"
+            },
+            {
+                "name": "Recipients",
+                "type": "int"
+            },
+            {
+                "name": "Hyperlinks",
+                "type": "int"
+            },
+            {
+                "name": "Characters",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Spam_probibility",
+            "type": "float"
+        },
+        "modelType": "sm.Logit",
+        "customMetrics": {
+            "accuracy": 0.78,
+            "recall": 0.7532467532467533,
+            "precision": 0.8055555555555556,
+            "sensitivity": 0.7532467532467533,
+            "specificity": 0.8082191780821918,
+            "f1Score": 0.778523489932886,
+            "roc_auc": 0.8305461661626046,
+            "k-fold5": {
+                "k": 5,
+                "accuracies": [
+                    80.0,
+                    78.0,
+                    80.0,
+                    73.0,
+                    84.0
+                ],
+                "accuracyAvg": 79.0
+            },
+            "k-fold10": {
+                "k": 10,
+                "accuracies": [
+                    82.0,
+                    78.0,
+                    82.0,
+                    74.0,
+                    80.0,
+                    78.0,
+                    78.0,
+                    68.0,
+                    80.0,
+                    88.0
+                ],
+                "accuracyAvg": 78.8
+            },
+            "k-fold2": {
+                "k": 2,
+                "accuracies": [
+                    76.0,
+                    78.8
+                ],
+                "accuracyAvg": 77.4
+            }
+        }
+    },
+    "gymEnrollAgeIncomeHoursDfKnnFit": {
+        "name": "gymEnrollAgeIncomeHoursDfKnnFit",
+        "description": "gymEnrollAgeIncomeHoursDf",
+        "inputs": [
+            {
+                "name": "Age",
+                "type": "int"
+            },
+            {
+                "name": "Income",
+                "type": "int"
+            },
+            {
+                "name": "Hours",
+                "type": "int"
+            }
+        ],
+        "output": {
+            "name": "Enroll_probibility",
+            "type": "float"
+        },
+        "modelType": "knn",
+        "customMetrics": {
+            "accuracy": 0.9025,
+            "recall": 0.8944099378881988,
+            "precision": 0.8674698795180723,
+            "sensitivity": 0.8944099378881988,
+            "specificity": 0.9079497907949791,
+            "f1Score": 0.8807339449541285,
+            "roc_auc": 0.9423191870890616,
+            "cvK": 5,
+            "bestParameters": {
+                "n_neighbors": 5
+            },
+            "bestCrossValidationScore": 0.915
+        }
     }
 }
