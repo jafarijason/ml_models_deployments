@@ -65,6 +65,7 @@ uvicorn main:app --host=0.0.0.0 --port=${PORT:-9900}
 
 ## if you install new dependency run this command and commit your code
 ```
+pip install  mlModelSaver --upgrade
 pip freeze > requirements.txt
 ```
 
