@@ -85,6 +85,10 @@ pip install mangum
 
 ```
 
+```
+heroku git:remote jason-ml
+```
+
 ## heroku
 ```
 heroku login
