@@ -1,4 +1,8 @@
 # ml_models_deployments
+This repository is mainly using [mlModelSaver](https://pypi.org/project/mlModelSaver/)
+
+## [Tutorial youtube](https://www.youtube.com/watch?v=fchTlNk2P8s)
+
 
 ## for windows please use [wsl](https://learn.microsoft.com/en-us/windows/wsl/install)
 
