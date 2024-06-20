@@ -63,7 +63,7 @@ matplotlib==3.9.0
 matplotlib-inline==0.1.7
 mdurl==0.1.2
 mistune==3.0.2
-mlModelSaver==1.0.32
+mlModelSaver==1.0.33
 nbclient==0.10.0
 nbconvert==7.16.4
 nbformat==5.10.4
@@ -107,6 +107,7 @@ rfc3986-validator==0.1.1
 rich==13.7.1
 rpds-py==0.18.1
 scikit-learn==1.5.0
+scikit-plot==0.3.7
 scipy==1.13.1
 seaborn==0.13.2
 Send2Trash==1.8.3
